@@ -6,7 +6,11 @@ PhoneGap Plugin for the Adobe Creative SDK
 
 Unzip **src/ios/AdobeCreateFramework.zip** into the same directory, Github has a 100MB file limit so it couldn't be checked in as is.
 
-## Installation
+## Installation (locally)
+
+    cordova plugin add /path/to/plugin-folder
+
+## Installation (Plugin Registry)
 
     cordova plugin add com.phonegap.adobe-creative-sdk
 
