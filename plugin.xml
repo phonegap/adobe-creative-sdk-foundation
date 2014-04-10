@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com.phonegap.adobe-creative-sdk"
+      version="0.1.0">
+
+    <name>CreativeSDK</name>
+    <description>Adobe Creative SDK PhoneGap Plugin</description>
+    <license></license>
+    <keywords>creative sdk</keywords>
+    <repo>https://github.com/renaun/CreativeSDKPhoneGapWrapper.git</repo>
+    <issue></issue>
+
+    <!-- ios -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+			<feature name="AdobeCreativeSDK">
+				<param name="ios-package" value="PGAdobeCreativeSDK"/>
+			</feature>
+        </config-file>
+
+        <js-module src="www/adobe-creative-sdk.js" name="adobe-creative-sdk">
+            <clobbers target="window.AdobeCreativeSDK" />
+        </js-module>
+
+		<header-file src="src/ios/PGAdobeCreativeSDK.h" />
+		<source-file src="src/ios/PGAdobeCreativeSDK.m" />
+		<resource-file src="src/ios/AdobeCreativeSDK.framework/Resources/AdobeSDKResources.bundle" />
+		
+		<framework src="src/ios/AdobeCreativeSDK.framework" custom="true" />
+		<framework src="CoreMotion.framework" weak="true" />
+		<framework src="CoreBluetooth.framework" weak="true" />
+		<framework src="MobileCoreServices.framework" />
+		<framework src="Security.framework" />
+		<framework src="SystemConfiguration.framework" />
+		<framework src="libstdc++.dylib" />
+
+    </platform>
+
+</plugin>
