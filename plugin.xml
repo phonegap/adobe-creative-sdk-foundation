@@ -25,7 +25,9 @@
         </js-module>
 
 		<header-file src="src/ios/PGAdobeCreativeSDK.h" />
+		<header-file src="src/ios/NSObject+PropertiesAsDictionary.h" />        
 		<source-file src="src/ios/PGAdobeCreativeSDK.m" />
+		<source-file src="src/ios/NSObject+PropertiesAsDictionary.m" />
 		<resource-file src="src/ios/AdobeCreativeSDK.framework/Resources/AdobeSDKResources.bundle" />
 		
 		<framework src="src/ios/AdobeCreativeSDK.framework" custom="true" />
