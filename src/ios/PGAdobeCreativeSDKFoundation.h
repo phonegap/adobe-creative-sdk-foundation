@@ -2,7 +2,7 @@
 #import <Cordova/CDVInvokedUrlCommand.h>
 #import <AdobeCreativeSDKFoundation/AdobeUXAuthManager.h>
 
-@interface PGAdobeCreativeSDK : CDVPlugin {
+@interface PGAdobeCreativeSDKFoundation : CDVPlugin {
     @private
     BOOL isInitialized;
 }

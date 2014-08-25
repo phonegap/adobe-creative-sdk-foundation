@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-           id="com.phonegap.adobe-creative-sdk"
-      version="0.1.0">
+           id="com.phonegap.adobe-creative-sdk-foundation"
+      version="0.2.0">
 
     <name>CreativeSDK</name>
-    <description>Adobe Creative SDK PhoneGap Plugin</description>
-    <license></license>
-    <keywords>creative sdk</keywords>
+    <description>Adobe Creative SDK Foundation PhoneGap Plugin</description>
+    <license>TODO</license>
+    <keywords>adobe creative sdk foundation</keywords>
     <repo>https://github.com/renaun/CreativeSDKPhoneGapWrapper.git</repo>
     <issue></issue>
 
@@ -15,19 +15,19 @@
     <platform name="ios">
 
         <config-file target="config.xml" parent="/*">
-			<feature name="AdobeCreativeSDK">
-				<param name="ios-package" value="PGAdobeCreativeSDK"/>
+			<feature name="AdobeCreativeSDKFoundation">
+				<param name="ios-package" value="PGAdobeCreativeSDKFoundation"/>
 			</feature>
         </config-file>
 
-        <js-module src="www/adobe-creative-sdk.js" name="adobe-creative-sdk">
-            <clobbers target="window.AdobeCreativeSDK" />
+        <js-module src="www/adobe-creative-sdk-foundation.js" name="adobe-creative-sdk-foundation">
+            <clobbers target="window.AdobeCreativeSDKFoundation" />
         </js-module>
 
-		<header-file src="src/ios/PGAdobeCreativeSDK.h" />
+		<header-file src="src/ios/PGAdobeCreativeSDKFoundation.h" />
 		<header-file src="src/ios/NSObject+PropertiesAsDictionary.h" />        
 		<header-file src="src/ios/NSArray+ItemAsDictionary.h" />        
-		<source-file src="src/ios/PGAdobeCreativeSDK.m" />
+		<source-file src="src/ios/PGAdobeCreativeSDKFoundation.m" />
 		<source-file src="src/ios/NSObject+PropertiesAsDictionary.m" />
 		<source-file src="src/ios/NSArray+ItemAsDictionary.m" />
 		

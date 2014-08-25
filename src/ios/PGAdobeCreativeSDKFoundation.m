@@ -1,9 +1,9 @@
 #import <AdobeCreativeSDKFoundation/AdobeCreativeSDKFoundation.h>
-#import "PGAdobeCreativeSDK.h"
+#import "PGAdobeCreativeSDKFoundation.h"
 #import "NSObject+PropertiesAsDictionary.h"
 
 
-@implementation PGAdobeCreativeSDK
+@implementation PGAdobeCreativeSDKFoundation
 
 #define CLIENT_ID       @""
 #define CLIENT_SECRET   @""

@@ -21,7 +21,7 @@
 
 var exec = require('cordova/exec');
 
-var AdobeCreativeSDK = {
+var AdobeCreativeSDKFoundation = {
 
     login: function(successCallback, failureCallback) {
         exec(successCallback, failureCallback, "AdobeCreativeSDK", "login", []);
@@ -32,4 +32,4 @@ var AdobeCreativeSDK = {
     },
 };
 
-module.exports = AdobeCreativeSDK;
+module.exports = AdobeCreativeSDKFoundation;

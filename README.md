@@ -1,6 +1,6 @@
-# com.phonegap.adobe-creative-sdk
+# com.phonegap.adobe-creative-sdk-foundation
 
-PhoneGap Plugin for the Adobe Creative SDK
+PhoneGap Plugin for the Adobe Creative SDK Foundation
 
 ## Pre-Installation
 
@@ -13,5 +13,5 @@ PhoneGap Plugin for the Adobe Creative SDK
 
 ## Installation (Plugin Registry)
 
-    cordova plugin add com.phonegap.adobe-creative-sdk
+    cordova plugin add com.phonegap.adobe-creative-sdk-foundation
 
