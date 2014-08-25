@@ -22,13 +22,36 @@
 var exec = require('cordova/exec');
 
 var AdobeCreativeSDKFoundation = {
+    
+    /*
+    Logs in a user.
+    
+    The successCallback will be called if the login was successful, and it will return 
+    as its only argument, a JSON object with these five keys:
 
+        adobeID // The Adobe ID of the user
+        displayName // The display name of the user
+        firstName // The email address of the user
+        lastName // The first name of the user
+        email // The email address of the user
+    
+    The failureCallback will be called if the login was unsuccessful, and it will return
+    as its only argument, an error message.
+    */
     login: function(successCallback, failureCallback) {
-        exec(successCallback, failureCallback, "AdobeCreativeSDK", "login", []);
+        exec(successCallback, failureCallback, "AdobeCreativeSDKFoundation", "login", []);
     },
 
+    /*
+    Logs out a user.
+    
+    The successCallback will be called if the logout was successful, with no arguments.
+    
+    The failureCallback will be called if the logout was unsuccessful, and it will return
+    as its only argument, an error message.
+    */
     logout: function(successCallback, failureCallback) {
-        exec(successCallback, failureCallback, "AdobeCreativeSDK", "logout", []);
+        exec(successCallback, failureCallback, "AdobeCreativeSDKFoundation", "logout", []);
     },
 };
 
