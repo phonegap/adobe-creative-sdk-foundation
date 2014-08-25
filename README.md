@@ -24,7 +24,7 @@ PhoneGap Plugin for the Adobe Creative SDK Foundation
 You can obtain your app's client id and secret from registering your app at https://creativesdk.adobe.com/
     
 ## Usage
-
+```
 function loginSuccess(adobeAuthUserProfile) {
     console.log("Logged in.");
     console.log(
@@ -41,4 +41,5 @@ function loginFailure(errorMessage) {
 };
 
 AdobeCreativeSDKFoundation.login(loginSuccess, loginFailure);    
-// AdobeCreativeSDKFoundation.logout(function() {}, function(errorMessage) {});    
+// AdobeCreativeSDKFoundation.logout(function() {}, function(errorMessage) {});
+```
