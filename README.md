@@ -34,4 +34,4 @@ function loginFailure(errorMessage) {
 };
 
 AdobeCreativeSDKFoundation.login(loginSuccess, loginFailure);    
-
+// AdobeCreativeSDKFoundation.logout(function() {}, function(errorMessage) {});    
