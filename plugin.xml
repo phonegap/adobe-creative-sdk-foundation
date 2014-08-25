@@ -39,7 +39,6 @@
 		<framework src="MobileCoreServices.framework" />
 		<framework src="Security.framework" />
 		<framework src="SystemConfiguration.framework" />
-		<framework src="libstdc++.dylib" />
 		<framework src="libc++.dylib" />
 
     </platform>
