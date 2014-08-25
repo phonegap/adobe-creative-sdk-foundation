@@ -1,6 +1,6 @@
 
 #import <Foundation/Foundation.h>
-#import <AdobeCreativeSDK/AdobeCloudItem.h>
+#import <AdobeCreativeSDKFoundation/AdobeAsset.h>
 
 @interface NSArray (ItemAsDictionary)
 

@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVInvokedUrlCommand.h>
-#import <AdobeCreativeSDK/AdobeAuthManager.h>
+#import <AdobeCreativeSDKFoundation/AdobeUXAuthManager.h>
 
 @interface PGAdobeCreativeSDK : CDVPlugin {
     @private

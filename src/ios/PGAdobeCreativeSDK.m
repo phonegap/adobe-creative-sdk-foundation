@@ -1,11 +1,10 @@
-#import <AdobeCreativeSDK/AdobeCreativeSDK.h>
+#import <AdobeCreativeSDKFoundation/AdobeCreativeSDKFoundation.h>
 #import "PGAdobeCreativeSDK.h"
 #import "NSObject+PropertiesAsDictionary.h"
 
 
 @implementation PGAdobeCreativeSDK
 
-#define DEVICE_NAME     @"PGAdobeCreativeSDK"
 #define CLIENT_ID       @""
 #define CLIENT_SECRET   @""
 
@@ -28,17 +27,14 @@
         NSLog(@"WARNING - PGAdobeCreativeSDK - CLIENT_SECRET is not set");
     }
     
-	[[AdobeAuthManager sharedManager] setAuthenticationEndpoint:AdobeAuthEndpointStageUS
-                                                 withDeviceName:DEVICE_NAME
-                                                   withClientID:CLIENT_ID
-                                               withClientSecret:CLIENT_SECRET];
+    [[AdobeUXAuthManager sharedManager] setAuthenticationParametersWithClientID:CLIENT_ID withClientSecret:CLIENT_SECRET];
 }
 
 - (void) login:(CDVInvokedUrlCommand*)command
 {
     __weak CDVPlugin* weakSelf = self;
     
-	[[AdobeAuthManager sharedManager] login:self.viewController
+	[[AdobeUXAuthManager sharedManager] login:self.viewController
      onSuccess:^(AdobeAuthUserProfile* profile) {
          CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                                                        messageAsDictionary:[profile propertiesAsDictionary]];
@@ -53,7 +49,7 @@
 {
     __weak CDVPlugin* weakSelf = self;
  
-	[[AdobeAuthManager sharedManager] logout:^{
+	[[AdobeUXAuthManager sharedManager] logout:^{
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
         [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     } onError:^(NSError *error) {
