@@ -14,4 +14,24 @@ PhoneGap Plugin for the Adobe Creative SDK Foundation
 ## Installation (Plugin Registry)
 
     cordova plugin add com.phonegap.adobe-creative-sdk-foundation
+    
+    
+## Usage
+
+function loginSuccess(adobeAuthUserProfile) {
+    console.log("Logged in.");
+    console.log(
+        "adobeID: " + adobeAuthUserProfile.adobeID + "\n"
+        "displayName: " + adobeAuthUserProfile.displayName + "\n"
+        "firstName: " + adobeAuthUserProfile.firstName + "\n"
+        "lastName: " + adobeAuthUserProfile.lastName + "\n"
+        "email: " + adobeAuthUserProfile.email + "\n"
+    );
+};
+
+function loginFailure(errorMessage) {
+    console.log(errorMessage);
+};
+
+AdobeCreativeSDKFoundation.login(loginSuccess, loginFailure);    
 
