@@ -10,10 +10,6 @@ PhoneGap Plugin for the Adobe Creative SDK Foundation
 ## Installation (locally)
 
     cordova plugin add /path/to/plugin-folder
-
-## Installation (Plugin Registry)
-
-    cordova plugin add com.phonegap.adobe-creative-sdk-foundation
     
 ## Post-Installation
 
