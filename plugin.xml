@@ -31,15 +31,16 @@
 		<source-file src="src/ios/NSObject+PropertiesAsDictionary.m" />
 		<source-file src="src/ios/NSArray+ItemAsDictionary.m" />
 		
-		<resource-file src="src/ios/AdobeCreativeSDK.framework/Resources/AdobeSDKResources.bundle" />
+		<resource-file src="src/ios/AdobeCreativeSDKFoundation.framework/Resources/AdobeCreativeSDKFoundationResources.bundle" />
 		
-		<framework src="src/ios/AdobeCreativeSDK.framework" custom="true" />
+		<framework src="src/ios/AdobeCreativeSDKFoundation.framework" custom="true" />
 		<framework src="CoreMotion.framework" weak="true" />
 		<framework src="CoreBluetooth.framework" weak="true" />
 		<framework src="MobileCoreServices.framework" />
 		<framework src="Security.framework" />
 		<framework src="SystemConfiguration.framework" />
 		<framework src="libstdc++.dylib" />
+		<framework src="libc++.dylib" />
 
     </platform>
 
