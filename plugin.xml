@@ -8,7 +8,7 @@
     <description>Adobe Creative SDK Foundation PhoneGap Plugin</description>
     <license>TODO</license>
     <keywords>adobe creative sdk foundation</keywords>
-    <repo>https://github.com/renaun/CreativeSDKPhoneGapWrapper.git</repo>
+    <repo>https://github.com/phonegap/adobe-creative-sdk-foundation.git</repo>
     <issue></issue>
 
     <!-- ios -->
