@@ -14,8 +14,8 @@ PhoneGap Plugin for the Adobe Creative SDK Foundation
 ## Post-Installation
 
 1. Locate the `PGAdobeCreativeSDKFoundation.m file` in your project
-2. Edit the `CLIENT_ID` value at the top of the file with your app's client id.
-2. Edit the `CLIENT_SECRET` value at the top of the file with your app's client secret.
+2. Edit the `ADOBE_CSDK_CLIENT_ID` value at the top of the file with your app's client id.
+2. Edit the `ADOBE_CSDK_CLIENT_SECRET` value at the top of the file with your app's client secret.
 
 You can obtain your app's client id and secret from registering your app at https://creativesdk.adobe.com/
     
