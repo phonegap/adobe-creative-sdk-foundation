@@ -84,8 +84,8 @@
          popupFileBrowser:^(AdobeSelectionAssetArray* itemSelections) {
              NSMutableArray* m = [NSMutableArray arrayWithCapacity:[itemSelections count]];
              for(id item in itemSelections) {
-                 AdobeAsset* it = ((AdobeSelectionAsset *)item).selectedItem;
-                 [m addObject:(AdobeAssetFile*)it];
+                 AdobeAsset* it = ((AdobeSelectionAsset*)item).selectedItem;
+                 [m addObject:it];
              }
              getSuccess(m);
          }
