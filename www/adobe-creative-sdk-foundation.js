@@ -65,6 +65,37 @@ var AdobeCreativeSDKFoundation = {
     */
     getFileMetadata: function(successCallback, failureCallback) {
         exec(successCallback, failureCallback, "AdobeCreativeSDKFoundation", "getFileMetadata", []);
+    },
+    
+    /*
+    Download your Creative Cloud file.
+    
+    The successCallback will be called if the call was successful and when the file is being 
+    downloaded (progress), and it will return 
+    as its only argument, a JSON object. Properties available:
+        href: 
+            the href of the file
+        metadata:
+            the metadata object of the file (download start)
+        fractionCompleted:
+            number of bytes of the downloaded file that has been downloaded (download progress)
+        result:
+            the file URL of the downloaded file (download complete)
+    
+    The failureCallback will be called if the call was unsuccessful, and it will return
+    as its only argument, an error message.
+    
+    Pass in the options object to specify the size and type of the file returned. The
+    available keys are:
+         width, height: 
+            If any dimension is omitted, the full-sized rendition of the file
+            will be returned.
+         type: 
+            (JPEG = 0, PNG = 1, PDF = 2, GIF = 3, TIFF = 4). 
+            If omitted, JPEG is the default.
+    */
+    downloadFiles: function(successCallback, failureCallback, options) {
+        exec(successCallback, failureCallback, "AdobeCreativeSDKFoundation", "downloadFiles", [ options ]);
     }
 };
 

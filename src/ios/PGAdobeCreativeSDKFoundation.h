@@ -10,5 +10,6 @@
 - (void) login:(CDVInvokedUrlCommand*)command;
 - (void) logout:(CDVInvokedUrlCommand*)command;
 - (void) getFileMetadata:(CDVInvokedUrlCommand*)command;
+- (void) downloadFiles:(CDVInvokedUrlCommand*)command;
 
 @end
