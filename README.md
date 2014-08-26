@@ -20,22 +20,47 @@ PhoneGap Plugin for the Adobe Creative SDK Foundation
 You can obtain your app's client id and secret from registering your app at https://creativesdk.adobe.com/
     
 ## Usage
-```
-function loginSuccess(adobeAuthUserProfile) {
-    console.log("Logged in.");
-    console.log(
-        "adobeID: " + adobeAuthUserProfile.adobeID + "\n"
-        "displayName: " + adobeAuthUserProfile.displayName + "\n"
-        "firstName: " + adobeAuthUserProfile.firstName + "\n"
-        "lastName: " + adobeAuthUserProfile.lastName + "\n"
-        "email: " + adobeAuthUserProfile.email + "\n"
-    );
-};
 
-function loginFailure(errorMessage) {
+See [docs](www/adobe-creative-sdk-foundation.js)
+
+```
+function generalFailure(errorMessage) {
     console.log(errorMessage);
 };
 
-AdobeCreativeSDKFoundation.login(loginSuccess, loginFailure);    
+function downloadSuccess(obj) {
+    if (obj.metadata) {
+        console.log("Metadata for file (" + obj.href + "): "  + JSON.stringify(obj.metadata));
+    } else if (obj.fractionCompleted) {
+        console.log("Progress for file (" + obj.href + "): "  + obj.fractionCompleted);
+    } else if (obj.result) {
+        console.log("Result for file (" + obj.href + ") (" + (obj.cached? "cached" : "not cached") + "): "  + obj.result);
+        // Add this tag to your page: <img src="" id="cloud-image" />
+        document.getElementById("cloud-image").src = obj.result;
+    }
+};
+
+function metadataSuccess(metadata) {
+    console.log("Got metadata: " + JSON.stringify(metadata));
+    
+    // cascade into downloadFiles call
+    AdobeCreativeSDKFoundation.downloadFiles(downloadSuccess, generalFailure);
+};
+
+function loginSuccess(adobeAuthUserProfile) {
+    console.log("Logged in.");
+    console.log("adobeID: " + adobeAuthUserProfile.adobeID + "\n" +
+                "displayName: " + adobeAuthUserProfile.displayName + "\n" +
+                "firstName: " + adobeAuthUserProfile.firstName + "\n" +
+                "lastName: " + adobeAuthUserProfile.lastName + "\n" +
+                "email: " + adobeAuthUserProfile.email + "\n"
+                );
+    
+    // cascade into getFileMetadata call
+    AdobeCreativeSDKFoundation.getFileMetadata(metadataSuccess, generalFailure);
+};
+
+
+AdobeCreativeSDKFoundation.login(loginSuccess, generalFailure);
 // AdobeCreativeSDKFoundation.logout(function() {}, function(errorMessage) {});
 ```
