@@ -53,6 +53,19 @@ var AdobeCreativeSDKFoundation = {
     logout: function(successCallback, failureCallback) {
         exec(successCallback, failureCallback, "AdobeCreativeSDKFoundation", "logout", []);
     },
+    
+    /*
+    Gets metadata for your Creative Cloud file.
+    
+    The successCallback will be called if the call was successful, and it will return 
+    as its only argument, a JSON object with the metadata.
+    
+    The failureCallback will be called if the call was unsuccessful, and it will return
+    as its only argument, an error message.
+    */
+    getFileMetadata: function(successCallback, failureCallback) {
+        exec(successCallback, failureCallback, "AdobeCreativeSDKFoundation", "getFileMetadata", []);
+    }
 };
 
 module.exports = AdobeCreativeSDKFoundation;

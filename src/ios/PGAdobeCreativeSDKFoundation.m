@@ -1,7 +1,7 @@
 #import <AdobeCreativeSDKFoundation/AdobeCreativeSDKFoundation.h>
 #import "PGAdobeCreativeSDKFoundation.h"
 #import "NSObject+PropertiesAsDictionary.h"
-
+#import "NSArray+ItemAsDictionary.h"
 
 @implementation PGAdobeCreativeSDKFoundation
 
@@ -63,6 +63,36 @@
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[error localizedDescription]];
         [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
+}
+
+- (void) getFileMetadata:(CDVInvokedUrlCommand*)command
+{
+    __weak CDVPlugin* weakSelf = self;
+    
+    void(^getSuccess)(AdobeSelectionAssetArray*)= ^(AdobeSelectionAssetArray* items) {
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                                                      messageAsArray:[items arrayWithItemsAsDictionaries]];
+        [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    };
+    
+    void(^getFailure)(NSString*)= ^(NSString* errorMessage) {
+        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:errorMessage];
+        [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    };
+    
+    [[AdobeUXAssetBrowser sharedBrowser]
+         popupFileBrowser:^(AdobeSelectionAssetArray* itemSelections) {
+             NSMutableArray* m = [NSMutableArray arrayWithCapacity:[itemSelections count]];
+             for(id item in itemSelections) {
+                 AdobeAsset* it = ((AdobeSelectionAsset *)item).selectedItem;
+                 [m addObject:(AdobeAssetFile*)it];
+             }
+             getSuccess(m);
+         }
+         onError:^(NSError *error) {
+             getFailure([error localizedDescription]);
+         }
+    ];
 }
 
 @end
