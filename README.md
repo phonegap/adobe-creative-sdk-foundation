@@ -4,7 +4,7 @@ PhoneGap Plugin for the Adobe Creative SDK Foundation
 
 ## Pre-Installation
 
-1. Download the `Adobe Creative SDK`, and unzip the file.
+1. Download the [`Adobe Creative SDK`](https://creativesdk.adobe.com/downloads.html), and unzip the file.
 2. Copy the file `AdobeCreativeSDKFoundation.framework` into the `src/ios` folder of the plugin
 
 ## Installation (locally)
